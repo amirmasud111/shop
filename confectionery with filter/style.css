@@ -1,0 +1,356 @@
+* {
+    font-family: 'Kaushan Script';
+    font-size: 22px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    padding: 12px 25px;
+}
+
+nav img {
+    cursor: pointer;
+}
+
+nav .header {
+    padding: 0px 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+nav .header .left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .header .left .header-left-links {
+    margin: 0 10px;
+    color: #ef7998;
+    cursor: pointer;
+    transition: 1s;
+}
+
+nav .header .left .header-left-links:hover {
+    color: black
+}
+
+nav .header .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav .header .right div {
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+nav .header .right span {
+    font-size: 0.7em;
+    margin-left: 12px;
+}
+
+.right .tel i {
+    transform: rotateY(180deg);
+    padding-top: 4px;
+}
+
+.right i {
+    font-size: 0.9em;
+}
+
+.right .cart {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.right .cart:hover {
+    background-color: #ef7998;
+    border: 1px solid #ef7998;
+    color: white;
+}
+
+.welcome-banner {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(249, 228, 148, 0.5), rgba(249, 228, 148, 0.5)), url('./img/headerBcg.jpeg') center/cover fixed no-repeat;
+}
+
+.greeting-msg {
+    font-size: 1.7em;
+
+    color: white;
+}
+
+.greeting-msg span {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #ef7998;
+}
+
+.explore {
+    border: 4px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.explore:hover {
+    background-color: black;
+    color: #ef7998;
+}
+
+.explore:focus {
+    box-shadow: 0 0 3px 3px rgba(84, 179, 223, 0.63);
+}
+
+.about-us {
+    padding-left: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-us .right {
+    flex: 1;
+    padding: 120px 0px 120px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.about-us .left {
+    flex: 1;
+    display: flex;
+    margin: 120px 0px 120px 20px;
+    padding: 50px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-us .left .header {
+    font-size: 1.5em;
+}
+
+.about-us .left .header span {
+    font-size: 1.9em;
+    color: #ef7998;
+}
+
+.about-us .content {
+    color: #6c757d;
+    font-size: 0.8em;
+    margin: 15px 100px 15px 0px
+}
+
+.about-us .explore {
+    border: 1px solid black;
+    font-size: 0.7em;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.about-us .right div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.about-us .right div::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    outline: 8px solid rgb(249, 228, 148);
+    z-index: -1;
+    transition: all 1s ease-in-out;
+}
+
+.about-us .right div:hover::before {
+    top: 0;
+    left: 0;
+}
+
+
+.about-us .right img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+}
+
+main .header {
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+main .header span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ef7998;
+}
+
+main .filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0px;
+}
+
+main .filters .filter {
+    margin: 5px 25px;
+    border: 1px solid black;
+    font-size: 0.7em;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+
+main .filters .filter:hover {
+    background-color: black;
+    color: #ef7998;
+
+}
+
+main .filters .filter:focus {
+    box-shadow: 0 0 3px 3px rgba(70, 73, 75, 0.63);
+}
+
+main .input-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main .input-search i {
+    background-color: #ef7998;
+    color: black;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 0.9em;
+}
+
+main .input-search .input-text {
+    height: 35px;
+    padding-left: 15px;
+    font-size: 0.8em;
+    width: 400px;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+    transition: 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+main .input-search .input-text:focus {
+    box-shadow: 0 0 3px 3px rgba(84, 179, 223, 0.63);
+}
+
+main .cards-container {
+    display: grid;
+    padding: 15px 80px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+
+}
+
+
+main .cards-container .grid-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+main .cards-container .grid-item .image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+
+main .cards-container .grid-item .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    z-index: 2;
+}
+
+.grid-item i {
+    position: absolute;
+    bottom: 0px;
+    right: -61px;
+    z-index: 1;
+    width: 45px;
+    height: 52px;
+    background-color: rgb(249, 228, 148);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    transition: 1s;
+}
+
+.grid-item .image:hover + i {
+    bottom: 61px;
+    right: 0px;
+}
+
+.grid-item .image:hover{
+    transform: scale(120%);
+}

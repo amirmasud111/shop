@@ -1,0 +1,87 @@
+.login-container {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(90, 90, 106, 1) 0%, rgba(32, 45, 58, 1) 81.3%);
+    height: 100vh;
+    padding: 30px;
+}
+
+.login-box {
+    font-size: 0.8em;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px 35px;
+    color: white;
+    margin: 30px;
+}
+
+.login-box form {}
+
+.login-box form .input-group {
+    margin: 30px 0;
+}
+
+.login-box form .input-group label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.login-box form .input-group input {
+    border:none;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid white;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-size: 1.5em;
+}
+
+.login-box form .do-u-have {}
+
+.login-box form .do-u-have a {
+    color: #eb4d4b;
+}
+
+.login-box form .submit-btn-container {
+    text-align: center;
+}
+
+.login-box form .submit-btn-container input {
+    border: none;
+    border-radius: 35px;
+    background-color: #eb4d4b;
+    color: white;
+    padding: 10px 40px;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow:0px 0px 5px 1px #eb4d4b;
+}
+
+.login-box .social-auth {
+    display: flex;
+    justify-content: space-around;
+    border-top: 3px solid rgba(255, 255, 255, 0.8);
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.login-box .social-auth a {
+    color: white;
+    font-size: 1.9em;
+}
+
+.login-box .social-auth a i {}
+
+.login-container .login-image-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.login-container .login-image-container img {
+    width: 100%;
+}
