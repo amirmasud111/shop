@@ -62,43 +62,44 @@ filters.forEach(filter => {
     filter.addEventListener("click", e => {
         cards.forEach(card => {
             card.style.display = "flex";
+            card.classList.remove("filtered");
         })
         if (filter.classList.contains("all")) {
             cards.forEach(card => {
                 card.style.display = "flex";
             })
-        } else if (filter.classList.contains("cake")) {
-            cards.forEach(card => {
-                if (!card.classList.contains("cake")) {
-                    card.style.display = "none";
-                }
-            })
-
-        } else if (filter.classList.contains("cupcake")) {
-            cards.forEach(card => {
-                if (!card.classList.contains("cupcake")) {
-                    card.style.display = "none";
-                }
-            })
-
-        } else if (filter.classList.contains("doughnut")) {
-            cards.forEach(card => {
-                if (!card.classList.contains("doughnut")) {
-                    card.style.display = "none";
-                }
-            })
-
-        } else if (filter.classList.contains("sweet")) {
-            cards.forEach(card => {
-                if (!card.classList.contains("sweet")) {
-                    card.style.display = "none";
-                }
-            })
-
         }
-
-
+        filtering(filter, "sweet")
+        filtering(filter, "cake")
+        filtering(filter, "cupcake")
+        filtering(filter, "doughnut")
+        filtering(filter, "sweet");
     })
 })
+
+input.addEventListener("input", (e) => {
+    cards.forEach(card => {
+
+        if (!card.lastChild.firstChild.innerHTML.toLowerCase().includes(e.target.value.toLowerCase())) {
+            card.style.display = "none";
+        } else if(card.classList.contains("filtered")){
+            card.style.display = "flex";
+        }
+    })
+})
+
+
+function filtering(filter, type) {
+    if (filter.classList.contains(type)) {
+        cards.forEach(card => {
+            if (!card.classList.contains(type)) {
+                card.style.display = "none";
+                card.classList.remove("filtered");
+            }else{
+                card.classList.add("filtered");
+            }
+        })
+    }
+}
 
 
