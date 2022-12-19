@@ -1,6 +1,12 @@
 let filters = document.querySelectorAll(".filter");
 let input = document.querySelector(".input-text");
 let cardContainer = document.querySelector(".cards-container");
+let modalIcons = document.querySelectorAll(".modal i");
+let modalImage = document.querySelector(".modal img");
+let modalContainer = document.querySelector(".modal-container");
+let navbarIcon = document.querySelector(".image-navbar-icon i");
+
+
 
 
 let data = [
@@ -82,10 +88,47 @@ input.addEventListener("input", (e) => {
 
         if (!card.lastChild.firstChild.innerHTML.toLowerCase().includes(e.target.value.toLowerCase())) {
             card.style.display = "none";
-        } else if(card.classList.contains("filtered")){
+        } else if (card.classList.contains("filtered")) {
             card.style.display = "flex";
         }
     })
+})
+
+let images = document.querySelectorAll(".image");
+let imagesArray = Array.from(images);
+
+images.forEach(image => {
+    image.addEventListener("click", () => {
+        modalContainer.style.display = "flex";
+        modalImage.src = image.src;
+    })
+})
+
+
+modalIcons.forEach(icon => {
+    icon.addEventListener("click", e => {
+        let index = imagesArray.findIndex(image => image.src == modalImage.src);
+        if (e.target.id == "close-icon") {
+            modalContainer.style.display = "none";
+        } else if (e.target.id == "pre-btn") {
+            index = index == 0 ? imagesArray.length - 1 : index;
+            modalImage.src = imagesArray[index - 1].src;
+        } else {
+            index = index == imagesArray.length - 1 ? 0 : index;
+            modalImage.src = imagesArray[index + 1].src;
+        }
+    })
+
+})
+
+navbarIcon.addEventListener("click", e => {
+    document.querySelector("nav").classList.toggle("show-nav");
+})
+
+window.addEventListener("click", e => {
+    if (e.target == modalContainer) {
+        modalContainer.style.display = "none";
+    }
 })
 
 
@@ -95,11 +138,16 @@ function filtering(filter, type) {
             if (!card.classList.contains(type)) {
                 card.style.display = "none";
                 card.classList.remove("filtered");
-            }else{
+            } else {
                 card.classList.add("filtered");
             }
         })
     }
 }
+
+
+
+
+
 
 
