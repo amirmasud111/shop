@@ -113,7 +113,7 @@ nav .header .right span {
 
 .greeting-msg {
     font-size: 1.7em;
-
+    text-align: center;
     color: white;
 }
 
@@ -469,6 +469,7 @@ main .cards-container .grid-item .info {
 
     .about-us {
         flex-direction: column;
+        padding-left: 0px;
     }
 
     .about-us .right {
