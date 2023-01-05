@@ -3,6 +3,7 @@
     font-size: 22px;
     box-sizing: border-box;
     margin: 0;
+    user-select: none;
 }
 
 body {
@@ -64,13 +65,13 @@ nav .header .right {
     justify-content: flex-end;
 }
 
+
 nav .header .right div {
     margin: 0 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
-    ;
 }
 
 
@@ -78,6 +79,12 @@ nav .header .right span {
     font-size: 0.7em;
     margin-left: 12px;
 }
+
+nav .header .right .cart span span{
+    font-size: 1em ;
+    margin-left: 0;
+}
+
 
 .right .tel i {
     transform: rotateY(180deg);
@@ -91,15 +98,143 @@ nav .header .right span {
 .right .cart {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px 12px;
+    padding: 5px 8px;
     cursor: pointer;
 }
+
+
+
 
 .right .cart:hover {
     background-color: #ef7998;
     border: 1px solid #ef7998;
     color: white;
 }
+
+.total-cart {
+    overflow: hidden;
+    position: absolute;
+    top: 73px;
+    right: 0;
+    width: 300px;
+    transform-origin: 100%;
+    transform: rotateY(90deg);
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 1s;
+
+}
+
+
+
+.show-total-cart {
+    transform: rotateY(0);
+    width: 300px;
+    padding: 25px;
+}
+
+.total-cart .purchases {
+    list-style: none;
+    padding: 0;
+}
+
+.total-cart .purchases li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.total-cart .purchases li img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+.total-cart .purchases li .cart-info .cart-item {
+    font-weight: bold;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.total-cart .purchases li .cart-info .cart-price {
+    font-size: 0.7em;
+    text-align: center;
+    margin-top: 5px;
+    direction: rtl;
+}
+
+.total-cart .purchases li .cart-info .cart-price span {
+    font-size: 1.2em;
+}
+
+
+.total-cart .purchases li i {
+    color: #ef7998;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.total-cart .purchases li i:hover {
+    color: black;
+}
+
+.total-cart .total-price {
+    display: flex;
+    justify-content: space-around;
+}
+
+.total-cart .total-price #total-price-number {
+    font-weight: bold;
+
+}
+
+.total-cart .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.total-cart .btns .clear-cart {
+    font-size: 0.8em;
+    padding: 7px 9px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.total-cart .btns .clear-cart:hover {
+    color: #ef7998;
+    background-color: black;
+}
+
+.total-cart .btns .checkout {
+    font-size: 0.7em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ef7998;
+    border: 1px solid #ef7998;
+    transition: 0.5s;
+}
+
+.total-cart .btns .checkout {
+    font-size: 0.7em;
+    padding: 7px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.total-cart .btns .checkout:hover {
+    color: black;
+    background-color: #ef7998;
+}
+
+
 
 .welcome-banner {
     width: 100%;
@@ -331,7 +466,6 @@ main .cards-container .grid-item {
 main .cards-container .grid-item .image {
     width: 100%;
     height: 100%;
-    position: relative;
     cursor: pointer;
     transition: 1s ease-in-out;
 }
@@ -347,8 +481,8 @@ main .cards-container .grid-item .info {
 
 .grid-item i {
     position: absolute;
-    bottom: 0px;
-    right: -61px;
+    bottom: 10px;
+    right: -45px;
     z-index: 1;
     width: 45px;
     height: 52px;
@@ -358,11 +492,16 @@ main .cards-container .grid-item .info {
     align-items: center;
     border-top-left-radius: 15px;
     transition: 1s;
+    cursor: pointer;
 }
 
 .grid-item .image:hover+i {
-    bottom: 61px;
-    right: 0px;
+    transform: translate(-100%, -100%);
+}
+
+.grid-item i:hover {
+    color: antiquewhite;
+    transform: translate(-100%, -100%);
 }
 
 .grid-item .image:hover {
@@ -494,8 +633,8 @@ main .cards-container .grid-item .info {
         grid-template-columns: 1fr;
         padding: 15px 25px;
     }
-    
-    main .input-search{
+
+    main .input-search {
         margin: 0 25px;
     }
 }

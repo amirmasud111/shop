@@ -15,7 +15,7 @@
     <nav>
         <div class="image-navbar-icon">
             <img src="./img/logo.svg" alt="" class="doughnut-icon">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" id="bars"></i>
         </div>
         <div class="header">
             <div class="left">
@@ -28,13 +28,25 @@
                     <i class="fa fa-phone"></i>
                     <span>+98 911 111 1111</span>
                 </div>
-                <div class="cart">
+                <div class="cart" onclick="showTotalPurchases()">
                     <i class="fa fa-shopping-cart"></i>
-                    <span>2 items - $10</span>
+                    <span><span class="total-items-number">0</span> items - $ <span class="total-price-nav">0</span></span>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="total-cart">
+        <ul class="purchases">
+           
+        </ul>
+        <div class="total-price">
+            Total <span>$ <span id="total-price-number">0</span></span>
+        </div>
+        <div class="btns">
+            <div class="clear-cart">CLEAR CART</div>
+            <div class="checkout">CHECKOUT</div>
+        </div>
+    </div>
     <section>
         <div class="welcome-banner">
             <div class="greeting-msg">Welcome To <span>Grandma's</span></div>
